@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BMP180: Main Page</title>
+<title>BMP180: stm32-bmp180</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BMP180<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">BMP180<span id="projectnumber">&#160;1.0.0</span>
    </div>
    <div id="projectbrief">STM32 HAL-based library for BMP180 sensor</div>
   </td>
@@ -69,10 +69,47 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">BMP180 Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">stm32-bmp180 </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> STM32 HAL-based library for Bosch BMP180 combined temperature, and atmospheric pressure sensor.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Synopsys</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;stm32f1xx_hal.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;../../BMP180/Inc/BMP180.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line">I2C_HandleTypeDef hi2c1;</div>
+<div class="line"><a class="code hl_struct" href="d4/d99/structBMP180__HandleTypeDef.html">BMP180_HandleTypeDef</a> hbmp;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">  HAL_Init();</div>
+<div class="line">  SystemClock_Config();</div>
+<div class="line">  MX_I2C1_Init();</div>
+<div class="line"> </div>
+<div class="line">  hbmp.<a class="code hl_variable" href="d4/d99/structBMP180__HandleTypeDef.html#adb64ebe67e56b8c2745f1b217339ec42">I2C_Handle</a> = &amp;hi2c1;</div>
+<div class="line">  hbmp.<a class="code hl_variable" href="d4/d99/structBMP180__HandleTypeDef.html#a0a7791f91e6d8d5716b76b7737707f9c">Sensor</a> = <a class="code hl_enumvalue" href="d9/df1/BMP180_8h.html#ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025">BMP180</a>;</div>
+<div class="line">  <a class="code hl_function" href="da/d2a/BMP180_8c.html#a494972af5f64d1c03f06d0916308d0ac">BMP180_Init</a>(&amp;hbmp);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">long</span> temp;</div>
+<div class="line">  <span class="keywordtype">long</span> pressure;</div>
+<div class="line">  <a class="code hl_function" href="da/d2a/BMP180_8c.html#a2b8566dc39d654db5790ab051c412fa4">BMP180_ReadSensor</a>(&amp;hbmp, <a class="code hl_enumvalue" href="d9/df1/BMP180_8h.html#aeeec1cc185e05d8b9357e0c33677927faee1ca1b1f5212fc538a81eda1702107b">BMP180_PRECISION_STANDARD</a>, &amp;temp, &amp;pressure);</div>
+<div class="line">}</div>
+<div class="ttc" id="aBMP180_8c_html_a2b8566dc39d654db5790ab051c412fa4"><div class="ttname"><a href="da/d2a/BMP180_8c.html#a2b8566dc39d654db5790ab051c412fa4">BMP180_ReadSensor</a></div><div class="ttdeci">HAL_StatusTypeDef BMP180_ReadSensor(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long *temp, long *pressure)</div><div class="ttdoc">Read compensated sensor values.</div><div class="ttdef"><b>Definition:</b> BMP180.c:60</div></div>
+<div class="ttc" id="aBMP180_8c_html_a494972af5f64d1c03f06d0916308d0ac"><div class="ttname"><a href="da/d2a/BMP180_8c.html#a494972af5f64d1c03f06d0916308d0ac">BMP180_Init</a></div><div class="ttdeci">HAL_StatusTypeDef BMP180_Init(BMP180_HandleTypeDef *hbmp)</div><div class="ttdoc">Initialize BMP180 driver.</div><div class="ttdef"><b>Definition:</b> BMP180.c:22</div></div>
+<div class="ttc" id="aBMP180_8h_html_ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025"><div class="ttname"><a href="d9/df1/BMP180_8h.html#ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025">BMP180</a></div><div class="ttdeci">@ BMP180</div><div class="ttdef"><b>Definition:</b> BMP180.h:21</div></div>
+<div class="ttc" id="aBMP180_8h_html_aeeec1cc185e05d8b9357e0c33677927faee1ca1b1f5212fc538a81eda1702107b"><div class="ttname"><a href="d9/df1/BMP180_8h.html#aeeec1cc185e05d8b9357e0c33677927faee1ca1b1f5212fc538a81eda1702107b">BMP180_PRECISION_STANDARD</a></div><div class="ttdeci">@ BMP180_PRECISION_STANDARD</div><div class="ttdef"><b>Definition:</b> BMP180.h:57</div></div>
+<div class="ttc" id="astructBMP180__HandleTypeDef_html"><div class="ttname"><a href="d4/d99/structBMP180__HandleTypeDef.html">BMP180_HandleTypeDef</a></div><div class="ttdef"><b>Definition:</b> BMP180.h:100</div></div>
+<div class="ttc" id="astructBMP180__HandleTypeDef_html_a0a7791f91e6d8d5716b76b7737707f9c"><div class="ttname"><a href="d4/d99/structBMP180__HandleTypeDef.html#a0a7791f91e6d8d5716b76b7737707f9c">BMP180_HandleTypeDef::Sensor</a></div><div class="ttdeci">BMP180_SensorTypeDef Sensor</div><div class="ttdef"><b>Definition:</b> BMP180.h:102</div></div>
+<div class="ttc" id="astructBMP180__HandleTypeDef_html_adb64ebe67e56b8c2745f1b217339ec42"><div class="ttname"><a href="d4/d99/structBMP180__HandleTypeDef.html#adb64ebe67e56b8c2745f1b217339ec42">BMP180_HandleTypeDef::I2C_Handle</a></div><div class="ttdeci">I2C_HandleTypeDef * I2C_Handle</div><div class="ttdef"><b>Definition:</b> BMP180.h:101</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+See Also</h1>
+<ul>
+<li><a href="https://www.bosch-sensortec.com/products/environmental-sensors/">https://www.bosch-sensortec.com/products/environmental-sensors/</a></li>
+<li><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
