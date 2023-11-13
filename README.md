@@ -1,4 +1,4 @@
-# stm32-bme280
+# stm32-bmp180
 
 STM32 HAL-based library for Bosch BMP180 combined temperature,
 and atmospheric pressure sensor.
@@ -10,7 +10,7 @@ and atmospheric pressure sensor.
 #include "../../BMP180/Inc/BMP180.h"
 
 I2C_HandleTypeDef hi2c1;
-BME280_HandleTypeDef hbmp180;
+BMP180_HandleTypeDef hbmp;
 
 int main(void)
 {
@@ -18,17 +18,18 @@ int main(void)
   SystemClock_Config();
   MX_I2C1_Init();
 
-  hbmp180.I2C_Handle = &hi2c1;
-  hbmp180.Sensor = BMP180;
-  BMP180_Init(&hbmp180);
+  hbmp.I2C_Handle = &hi2c1;
+  hbmp.Sensor = BMP180;
+  BMP180_Init(&hbmp);
 
   long temp;
   long pressure;
-  BMP180_ReadSensor(&hbmp180, BMP180_PRECISION_STANDARD, &temp, &pressure);
+  BMP180_ReadSensor(&hbmp, BMP180_PRECISION_STANDARD, &temp, &pressure);
 }
 ```
 
 ## See Also
 
 - https://www.bosch-sensortec.com/products/environmental-sensors/
-- https://www.alldatasheet.com/datasheet-pdf/pdf/1132068/BOSCH/BMP180.html
+- https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1
+

@@ -2,7 +2,7 @@
  * BMP180_hal.h
  *
  *  Created on: Jan 16, 2023
- *      Author: froller
+ *      Author: Alexander Frolov <alex.froller@gmail.com>
  */
 
 #ifndef INC_BMP180_H_
@@ -53,7 +53,7 @@ typedef enum {
   BMP180_PRECISION_LOW       = BMP180_OVERSAMPLING_0, /*!< Low precision. @see BMP180_OVERSAMPLING_0 */
   BMP180_PRECISION_STANDARD  = BMP180_OVERSAMPLING_1, /*!< Standard precision. @see BMP180_OVERSAMPLING_1 */
   BMP180_PRECISION_HIGH      = BMP180_OVERSAMPLING_2, /*!< High precision. @see BMP180_OVERSAMPLING_2 */
-  BMP180_PRECISION_ULTRAHIGH = BMP180_OVERSAMPLING_3  /*!   < Ultra high precision. @see BMP180_OVERSAMPLING_3 */
+  BMP180_PRECISION_ULTRAHIGH = BMP180_OVERSAMPLING_3  /*!< Ultra high precision. @see BMP180_OVERSAMPLING_3 */
 } BMP180_OversamplingTypeDef;
 
 #pragma pack(push, 1)
@@ -81,9 +81,9 @@ typedef struct {
  * BMP180 control register bit-fields
  */
 typedef struct {
-  BMP180_MeasurementTypeDef measurement:5; /**< Type of measurement. BMP180_MEASUREMENT_TEMPERATURE or BMP180_MEASUREMENT_PRESSURE */
-  BMP180_ConversionStatusTypeDef sco:1; /**< Conversion status */
-  BMP180_OversamplingTypeDef oss:2; /**< Oversampling settings */
+  BMP180_MeasurementTypeDef measurement:5; /*!< Type of measurement. BMP180_MEASUREMENT_TEMPERATURE or BMP180_MEASUREMENT_PRESSURE */
+  BMP180_ConversionStatusTypeDef sco:1; /*!< Conversion status */
+  BMP180_OversamplingTypeDef oss:2; /*!< Oversampling settings */
 } BMP180_ControlRegisterTypeDef;
 
 #pragma pack(pop)
@@ -100,16 +100,28 @@ typedef struct {
   BMP180_CalibrationDataTypeDef CalibrationData;  /**< BMP180 calibration data. Read from chip by @ref BMP180_Init() */
 } BMP180_HandleTypeDef;
 
-HAL_StatusTypeDef __BMP180_ReadRegister(BMP180_HandleTypeDef *hbmp, uint8_t reg, uint8_t *buffer, const size_t size);
-HAL_StatusTypeDef __BMP180_WriteRegister(BMP180_HandleTypeDef *hbmp, uint8_t reg, uint8_t *buffer, const size_t size);
-HAL_StatusTypeDef __BMP180_ReadChipId(BMP180_HandleTypeDef *hbmp, uint8_t *chipId);
-HAL_StatusTypeDef __BMP180_ReadCalibrationData(BMP180_HandleTypeDef *hbmp, BMP180_CalibrationDataTypeDef *sCalibration);
-HAL_StatusTypeDef __BMP180_ReadSensor(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, uint16_t *UT, uint32_t *UP);
-long __BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT);
-long __BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP);
+/*******************************************************************************
+ *
+ * Public functions
+ *
+ ******************************************************************************/
 
 HAL_StatusTypeDef BMP180_Init(BMP180_HandleTypeDef *hbmp);
 HAL_StatusTypeDef BMP180_Reset(BMP180_HandleTypeDef *hbmp);
 HAL_StatusTypeDef BMP180_ReadSensor(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long *temp, long *pressure);
+
+/*******************************************************************************
+ *
+ * Private functions
+ *
+ ******************************************************************************/
+
+HAL_StatusTypeDef BMP180_ReadRegister(BMP180_HandleTypeDef *hbmp, uint8_t reg, uint8_t *buffer, const size_t size);
+HAL_StatusTypeDef BMP180_WriteRegister(BMP180_HandleTypeDef *hbmp, uint8_t reg, uint8_t *buffer, const size_t size);
+HAL_StatusTypeDef BMP180_ReadChipId(BMP180_HandleTypeDef *hbmp, uint8_t *chipId);
+HAL_StatusTypeDef BMP180_ReadCalibrationData(BMP180_HandleTypeDef *hbmp, BMP180_CalibrationDataTypeDef *sCalibration);
+HAL_StatusTypeDef BMP180_ReadSensorRaw(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, uint16_t *UT, uint32_t *UP);
+long BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT);
+long BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP);
 
 #endif /* INC_BMP180_H_ */
