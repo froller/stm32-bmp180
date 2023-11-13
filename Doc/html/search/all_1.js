@@ -7,7 +7,7 @@ var searchData=
   ['bmp180_2ec_4',['BMP180.c',['../BMP180_8c.html',1,'']]],
   ['bmp180_2eh_5',['BMP180.h',['../BMP180_8h.html',1,'']]],
   ['bmp180_5fcalibrationdatatypedef_6',['BMP180_CalibrationDataTypeDef',['../structBMP180__CalibrationDataTypeDef.html',1,'']]],
-  ['bmp180_5fcompensatepressure_7',['BMP180_CompensatePressure',['../BMP180_8h.html#a3a3de1f4f3b4eaed86e0c3d66de46899',1,'BMP180.h']]],
+  ['bmp180_5fcompensatepressure_7',['bmp180_compensatepressure',['../BMP180_8c.html#a3a3de1f4f3b4eaed86e0c3d66de46899',1,'BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP):&#160;BMP180.c'],['../BMP180_8h.html#a3a3de1f4f3b4eaed86e0c3d66de46899',1,'BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP):&#160;BMP180.c']]],
   ['bmp180_5fcompensatetemp_8',['bmp180_compensatetemp',['../BMP180_8c.html#af85f91053e310906e521393fa5c852dc',1,'BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT):&#160;BMP180.c'],['../BMP180_8h.html#af85f91053e310906e521393fa5c852dc',1,'BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT):&#160;BMP180.c']]],
   ['bmp180_5fcontrolregistertypedef_9',['BMP180_ControlRegisterTypeDef',['../structBMP180__ControlRegisterTypeDef.html',1,'']]],
   ['bmp180_5fconversion_5fidle_10',['BMP180_CONVERSION_IDLE',['../BMP180_8h.html#af5a2f46eb585ac136de3793387bb84e7a90df4c1333815720c6a68ef3fb42ecff',1,'BMP180.h']]],

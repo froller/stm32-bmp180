@@ -159,6 +159,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:af85f91053e310906e521393fa5c852dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compensate raw temperature value.  <br /></td></tr>
 <tr class="separator:af85f91053e310906e521393fa5c852dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a3de1f4f3b4eaed86e0c3d66de46899" id="r_a3a3de1f4f3b4eaed86e0c3d66de46899"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BMP180_8h.html#a3a3de1f4f3b4eaed86e0c3d66de46899">BMP180_CompensatePressure</a> (<a class="el" href="structBMP180__HandleTypeDef.html">BMP180_HandleTypeDef</a> *hbmp, <a class="el" href="BMP180_8h.html#aeeec1cc185e05d8b9357e0c33677927f">BMP180_OversamplingTypeDef</a> precision, long UT, long UP)</td></tr>
+<tr class="memdesc:a3a3de1f4f3b4eaed86e0c3d66de46899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compensate raw atmospheric pressure value.  <br /></td></tr>
 <tr class="separator:a3a3de1f4f3b4eaed86e0c3d66de46899"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -192,9 +193,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Exact sensor chip type. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45aac7139676c688ec901cdb8daf9bdc571" name="ac135b8d0ae8b7ebde37118cd2834da45aac7139676c688ec901cdb8daf9bdc571"></a>BMP085&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025" name="ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025"></a>BMP180&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45a34580c98fc2fbc3f5f63525268ab8a2c" name="ac135b8d0ae8b7ebde37118cd2834da45a34580c98fc2fbc3f5f63525268ab8a2c"></a>BMP183&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45aac7139676c688ec901cdb8daf9bdc571" name="ac135b8d0ae8b7ebde37118cd2834da45aac7139676c688ec901cdb8daf9bdc571"></a>BMP085&#160;</td><td class="fielddoc"><p>Bosch BMP085 </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/627863/Bosch/BMP085/1">https://datasheetspdf.com/pdf-file/627863/Bosch/BMP085/1</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025" name="ac135b8d0ae8b7ebde37118cd2834da45ae314137d3131638b41320f25419d1025"></a>BMP180&#160;</td><td class="fielddoc"><p>Bosch BMP180 </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ac135b8d0ae8b7ebde37118cd2834da45a34580c98fc2fbc3f5f63525268ab8a2c" name="ac135b8d0ae8b7ebde37118cd2834da45a34580c98fc2fbc3f5f63525268ab8a2c"></a>BMP183&#160;</td><td class="fielddoc"><p>Bosch BMP183 </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/1178674/Bosch/BMP183/1">https://datasheetspdf.com/pdf-file/1178674/Bosch/BMP183/1</a> </dd></dl>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00019">19</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
@@ -212,7 +216,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Measurement type. Either Air temperature or atmospheric pressure. </p>
+<p>Measurement type. Either Air temperature or atmospheric pressure. </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> page 18 </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa098284ba8745570e68231dccd81590da04f9411f5f43453fffa9f3f77605d55f" name="aa098284ba8745570e68231dccd81590da04f9411f5f43453fffa9f3f77605d55f"></a>BMP180_MEASUREMENT_TEMPERATURE&#160;</td><td class="fielddoc"><p>Air temperature </p>
 </td></tr>
@@ -220,7 +224,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00029">29</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00030">30</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +239,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Conversion status. </p>
+<p>Conversion status. </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> page 18 </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af5a2f46eb585ac136de3793387bb84e7a90df4c1333815720c6a68ef3fb42ecff" name="af5a2f46eb585ac136de3793387bb84e7a90df4c1333815720c6a68ef3fb42ecff"></a>BMP180_CONVERSION_IDLE&#160;</td><td class="fielddoc"><p>Conversion is complete. Data registers can be read. </p>
 </td></tr>
@@ -243,7 +247,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00038">38</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00040">40</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
 
 </div>
 </div>
@@ -258,7 +262,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Oversampling settings. Different setting require different conversion time and average current consumption. </p>
+<p>Oversampling settings. Different setting require different conversion time and average current consumption. </p><dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> page 12 </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeeec1cc185e05d8b9357e0c33677927fadd8b7eaa10fcbce0ab3962d672b9f8f3" name="aeeec1cc185e05d8b9357e0c33677927fadd8b7eaa10fcbce0ab3962d672b9f8f3"></a>BMP180_OVERSAMPLING_0&#160;</td><td class="fielddoc"><p>1 sample, 4.5ms, 3uA </p>
 </td></tr>
@@ -278,7 +282,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00048">48</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8h_source.html#l00051">51</a> of file <a class="el" href="BMP180_8h_source.html">BMP180.h</a>.</p>
 
 </div>
 </div>
@@ -578,8 +582,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>HAL status </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structBMP180__CalibrationDataTypeDef.html">BMP180_CalibrationDataTypeDef</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00123">123</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00124">124</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
 
 </div>
 </div>
@@ -633,7 +638,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>HAL status </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00141">141</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00142">142</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
 
 </div>
 </div>
@@ -672,8 +677,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Compensated temperature </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> page 15 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00193">193</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00195">195</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
 
 </div>
 </div>
@@ -714,6 +720,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compensate raw atmospheric pressure value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hbmp</td><td>BMP180 handle pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">precision</td><td>precision level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UT</td><td>uncompensated raw temperature value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UP</td><td>uncompensated raw atmospheric pressure value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Compensated athmospheric pressure </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1">https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1</a> page 15 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="BMP180_8c_source.html#l00213">213</a> of file <a class="el" href="BMP180_8c_source.html">BMP180.c</a>.</p>
 
 </div>
 </div>

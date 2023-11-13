@@ -119,6 +119,7 @@ HAL_StatusTypeDef BMP180_ReadChipId(BMP180_HandleTypeDef *hbmp, uint8_t *chipId)
  * @param[in] hbmp: BMP180 handle pointer
  * @param[out] sCalibration: pointer to calibration data structure
  * @return HAL status
+ * @see BMP180_CalibrationDataTypeDef
  */
 HAL_StatusTypeDef BMP180_ReadCalibrationData(BMP180_HandleTypeDef *hbmp, BMP180_CalibrationDataTypeDef *sCalibration) {
   uint8_t buffer[22];
@@ -189,6 +190,7 @@ HAL_BMP180_ReadSensor_Exit:
  * @param[in] hbmp: BMP180 handle pointer
  * @param[in] UT: raw uncompensated temperature value
  * @return Compensated temperature
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 15
  */
 long BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT) {
   long X1, X2, B5;
@@ -201,14 +203,14 @@ long BMP180_CompensateTemp(BMP180_HandleTypeDef *hbmp, long UT) {
 
 /**
  * @brief Compensate raw atmospheric pressure value
- * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 15
  * @param[in] hbmp: BMP180 handle pointer
  * @param[in] precision: precision level
  * @param[in] UT: uncompensated raw temperature value
  * @param[in] UP: uncompensated raw atmospheric pressure value
  * @return Compensated athmospheric pressure
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 15
  */
-long HAL_BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP) {
+long BMP180_CompensatePressure(BMP180_HandleTypeDef *hbmp, BMP180_OversamplingTypeDef precision, long UT, long UP) {
   long X1, X2, X3;
   long B3, B5, B6;
   unsigned long B4, B7;

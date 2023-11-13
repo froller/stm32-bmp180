@@ -17,43 +17,46 @@
  * Exact sensor chip type.
  */
 typedef enum {
-  BMP085 = 85,
-  BMP180 = 180,
-  BMP183 = 183
+  BMP085 = 85,	/**< Bosch BMP085 @see https://datasheetspdf.com/pdf-file/627863/Bosch/BMP085/1 */
+  BMP180 = 180,	/**< Bosch BMP180 @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 */
+  BMP183 = 183	/**< Bosch BMP183 @see https://datasheetspdf.com/pdf-file/1178674/Bosch/BMP183/1 */
 } BMP180_SensorTypeDef;
 
 /**
  * @enum BMP180_MeasurementTypeDef
  * Measurement type. Either Air temperature or atmospheric pressure.
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 18
  */
 typedef enum {
-  BMP180_MEASUREMENT_TEMPERATURE = 0x0E, /*!< Air temperature */
-  BMP180_MEASUREMENT_PRESSURE    = 0x14  /*!< Atmospheric pressure */
+  BMP180_MEASUREMENT_TEMPERATURE = 0x0E, /**< Air temperature */
+  BMP180_MEASUREMENT_PRESSURE    = 0x14  /**< Atmospheric pressure */
 } BMP180_MeasurementTypeDef;
 
 /**
  * @enum BMP180_ConversionStatusTypeDef
  * Conversion status.
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 18
  */
 typedef enum {
-  BMP180_CONVERSION_IDLE    = 0, /*!< Conversion is complete. Data registers can be read. */
-  BMP180_CONVERSION_RUNNING = 1, /*!< Conversion is in progress. Data registers contain inconsistent data. */
+  BMP180_CONVERSION_IDLE    = 0, /**< Conversion is complete. Data registers can be read. */
+  BMP180_CONVERSION_RUNNING = 1, /**< Conversion is in progress. Data registers contain inconsistent data. */
 } BMP180_ConversionStatusTypeDef;
 
 /**
  * @enum BMP180_OversamplingTypeDef
  * Oversampling settings.
  * Different setting require different conversion time and average current consumption.
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 12
  */
 typedef enum {
-  BMP180_OVERSAMPLING_0 = 0, /*!< 1 sample, 4.5ms, 3uA */
-  BMP180_OVERSAMPLING_1 = 1, /*!< 2 samples, 7.5ms, 5uA */
-  BMP180_OVERSAMPLING_2 = 2, /*!< 4 samples, 13.5ms, 7uA */
-  BMP180_OVERSAMPLING_3 = 3, /*!< 8 samples, 22.5ms, 12uA */
-  BMP180_PRECISION_LOW       = BMP180_OVERSAMPLING_0, /*!< Low precision. @see BMP180_OVERSAMPLING_0 */
-  BMP180_PRECISION_STANDARD  = BMP180_OVERSAMPLING_1, /*!< Standard precision. @see BMP180_OVERSAMPLING_1 */
-  BMP180_PRECISION_HIGH      = BMP180_OVERSAMPLING_2, /*!< High precision. @see BMP180_OVERSAMPLING_2 */
-  BMP180_PRECISION_ULTRAHIGH = BMP180_OVERSAMPLING_3  /*!< Ultra high precision. @see BMP180_OVERSAMPLING_3 */
+  BMP180_OVERSAMPLING_0 = 0, /**< 1 sample, 4.5ms, 3uA */
+  BMP180_OVERSAMPLING_1 = 1, /**< 2 samples, 7.5ms, 5uA */
+  BMP180_OVERSAMPLING_2 = 2, /**< 4 samples, 13.5ms, 7uA */
+  BMP180_OVERSAMPLING_3 = 3, /**< 8 samples, 22.5ms, 12uA */
+  BMP180_PRECISION_LOW       = BMP180_OVERSAMPLING_0, /**< Low precision. @see BMP180_OVERSAMPLING_0 */
+  BMP180_PRECISION_STANDARD  = BMP180_OVERSAMPLING_1, /**< Standard precision. @see BMP180_OVERSAMPLING_1 */
+  BMP180_PRECISION_HIGH      = BMP180_OVERSAMPLING_2, /**< High precision. @see BMP180_OVERSAMPLING_2 */
+  BMP180_PRECISION_ULTRAHIGH = BMP180_OVERSAMPLING_3  /**< Ultra high precision. @see BMP180_OVERSAMPLING_3 */
 } BMP180_OversamplingTypeDef;
 
 #pragma pack(push, 1)
@@ -61,6 +64,7 @@ typedef enum {
 /**
  * @struct BMP180_CalibrationDataTypeDef
  * BMP180 calibration values.
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 13
  */
 typedef struct {
   short AC1;
@@ -79,11 +83,12 @@ typedef struct {
 /**
  * @struct BMP180_ControlRegisterTypeDef
  * BMP180 control register bit-fields
+ * @see https://datasheetspdf.com/pdf-file/770150/Bosch/BMP180/1 page 18
  */
 typedef struct {
-  BMP180_MeasurementTypeDef measurement:5; /*!< Type of measurement. BMP180_MEASUREMENT_TEMPERATURE or BMP180_MEASUREMENT_PRESSURE */
-  BMP180_ConversionStatusTypeDef sco:1; /*!< Conversion status */
-  BMP180_OversamplingTypeDef oss:2; /*!< Oversampling settings */
+  BMP180_MeasurementTypeDef measurement:5; /**< Type of measurement. BMP180_MEASUREMENT_TEMPERATURE or BMP180_MEASUREMENT_PRESSURE */
+  BMP180_ConversionStatusTypeDef sco:1; /**< Conversion status */
+  BMP180_OversamplingTypeDef oss:2; /**< Oversampling settings */
 } BMP180_ControlRegisterTypeDef;
 
 #pragma pack(pop)
