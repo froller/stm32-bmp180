@@ -64,7 +64,7 @@ HAL_StatusTypeDef BMP180_ReadSensor(BMP180_HandleTypeDef *hbmp, BMP180_Oversampl
   if ((result = BMP180_ReadSensorRaw(hbmp, precision, &UT, &UP)))
     return result;
   *temp = BMP180_CompensateTemp(hbmp, UT);
-  *pressure = HAL_BMP180_CompensatePressure(hbmp, precision, UT, UP);
+  *pressure = BMP180_CompensatePressure(hbmp, precision, UT, UP);
   return result;
 }
 
